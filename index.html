@@ -70,47 +70,56 @@
                     <div class="modal">
 
                         <form class="js-form">
-                            <h2 class="title-form">Оставьте свои данные, мы вам перезвоним</h2>
+                            <h1 class="hidden-title">Форма в модальном окне</h1>
+                            <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
 
                             <div class="input-container flexbox">
 
-                                <label for="name" class="d11 label-titles">Имя</label>
-                                <div class="input-container">
-                                    <svg class="icon d12">
+                                <label for="name" class="label-titles">Имя</label>
+                                <div class="input-icon-container">
+                                    <input class="modalform-input" type="text" name="name" id="name" />
+                                    <svg class="icon forms">
                                         <use href="./images/icons/sprite.svg#form-name-person"> </use>
                                     </svg>
-                                    <input type="text" name="name" id="name" />
                                 </div>
 
                                 <label for="tel-number" class="label-titles">Телефон</label>
-                                <div class="input-container">
+                                <div class="input-icon-container">
+                                    <input class="modalform-input" type="tel" name="tel-number" id="tel-number" />
                                     <svg class="icon">
                                         <use href="./images/icons/sprite.svg#form-phone"> </use>
                                     </svg>
-                                    <input type="tel" name="tel-number" id="tel-number" />
                                 </div>
 
                                 <label for="mail" class="label-titles">Почта</label>
-                                <div class="input-container">
+                                <div class="input-icon-container">
+                                    <input class="modalform-input" type="email" name="mail" id="mail" />
                                     <svg class="icon">
                                         <use href="./images/icons/sprite.svg#form-email"> </use>
                                     </svg>
-                                    <input type="email" name="mail" id="mail" />
                                 </div>
 
-                                <label for="comment" class="label-titles">Комментарий
-                                    <textarea name="comment" rows="7" placeholder="Введите текст"></textarea>
-                                </label>
+                                <label for="comment" class="label-titles">Комментарий</label>
+                                <textarea class="modalform-comment" name="comment" id="comment" rows="7"
+                                    placeholder="Введите текст"></textarea>
+
+
+
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="chekbox" class="checkbox hidden-title" />
+                                    <label for="checkbox" class="checkbox-title ">Соглашаюсь с рассылкой и принимаю <a
+                                            href="" class="link">Условия
+                                            договора</a></label>
+
+                                </div>
+
                             </div>
 
-                            <label for="checkbox">Соглашаюсь с рассылкой и принимаю Условия договора</label>
-                            <input type="checkbox" id="chekbox" />
-
-                            <button type="submit" class="button">Отправить</button>
+                            <button type="submit" class="modal-submit">Отправить</button>
                         </form>
 
                         <button type="button" class="button-modal flexbox" data-modal-close>
-                            <svg class="icon">
+                            <svg class="modal-icon">
                                 <use href="./images/icons/sprite.svg#close-modal"> </use>
                             </svg>
                         </button>
@@ -417,8 +426,8 @@
                 </li>
                 <li class="item flexbox">
                     <form class="js-form flexbox" id="footer-form">
-                        <label for="mail"></label>
-                        <input type="email" id="mail" placeholder="E-mail">
+                        <label for="mail-submit"></label>
+                        <input type="email" id="mail-submit" placeholder="E-mail">
                         <button type="submit" class="button-footer-submit">Подписаться
                             <svg class="icon">
                                 <use href="./images/icons/sprite.svg#footer-icon-send"> </use>
@@ -433,7 +442,7 @@
     </footer>
 
     <script src="./js/modal.js"></script>
-    <script src='./js/js-form.js'></script>
+    <script src="./js/js-form.js"></script>
 
 </body>
 

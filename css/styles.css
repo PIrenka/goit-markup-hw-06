@@ -17,11 +17,13 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *::after,
 *::before {
   box-sizing: inherit;
 }
+
 img {
   display: block;
   max-width: 100%;
@@ -77,6 +79,7 @@ main {
 .title {
   margin: 0;
 }
+
 .text {
   margin: 0;
 }
@@ -89,6 +92,7 @@ main {
   /* стиль возможности сделать переходы (А-В-А) при ховере и фокусе (время-250ms, функция распределения времени-cubic-bezier(0.4, 0, 0.2, 1) */
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .item .link:hover,
 .item .link:focus,
 .item .link:active {
@@ -116,6 +120,7 @@ main {
   /* нижняя линия внизу хедера */
   border-bottom: 1px solid var(--header-bottom-line);
 }
+
 .page-header .flexbox {
   /* выравнивание по центру содержимого хедера */
   align-items: center;
@@ -138,10 +143,12 @@ main {
   margin-bottom: 25px;
   margin-right: 93px;
 }
+
 .web-logotext {
   /* стили для части Web в логотипе */
   color: var(--active-color);
 }
+
 .studio-logotext {
   /* стили для части Studio в логотипе */
   color: var(--logo-studio-color);
@@ -153,6 +160,7 @@ main {
   margin-right: auto;
   /* position: relative; */
 }
+
 .site-nav .link {
   /* сделать область наведения больше */
   padding: 20px 0;
@@ -162,10 +170,12 @@ main {
   /* отступ справа кроме последнего ли в сайт-нав */
   margin-right: 50px;
 }
+
 .site-nav .link {
   /* цвет ссылок в левой навигации хедера */
   color: var(--minititles-color);
 }
+
 .site-nav .link.current {
   /* выделение ссылки в навигации хедера текуущей страници другим цветом */
   color: var(--active-color);
@@ -174,6 +184,7 @@ main {
 .site-nav .link {
   position: relative;
 }
+
 .link.current::after {
   /* "подчеркивание" активной страницы в Хедере */
   position: absolute;
@@ -191,6 +202,7 @@ main {
   font-weight: 500;
   letter-spacing: 0.02em;
 }
+
 .mail-tel-nav .item:not(:last-child) {
   margin-right: 30px;
 }
@@ -202,6 +214,7 @@ main {
   fill: var(--inside-color);
   margin-right: 10px;
 }
+
 .mail-tel-nav .icon.tel {
   /* стили для иконки телефона */
   width: 10px;
@@ -211,6 +224,7 @@ main {
   /* стиль возможности сделать переходы (А-В-А) при ховере и фокусе (время-250ms, функция распределения времени-cubic-bezier(0.4, 0, 0.2, 1) */
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .mail-tel-nav .link:hover .tel,
 .mail-tel-nav .link:focus .tel,
 .mail-tel-nav .link:hover .mail,
@@ -289,22 +303,27 @@ main {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 1; /* позволяет "затемнить" фиксированый ранее Хедер, в противном случаи Хедер будет доступным для кликания ссылок в нем */
+  z-index: 1;
+  /* позволяет "затемнить" фиксированый ранее Хедер, в противном случаи Хедер будет доступным для кликания ссылок в нем */
 
   opacity: 1;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* overflow: auto; */
 }
+
 .backdrop.is-hidden {
   /* стили "скрытия" слоя с модальным окном */
-  opacity: 0; /* слой стал прозрачным, но не пускающим за себя */
-  pointer-events: none; /* появилась возможность проникнуть сквозь слой и выбирать и нажимать на элементы страницы */
+  opacity: 0;
+  /* слой стал прозрачным, но не пускающим за себя */
+  pointer-events: none;
+  /* появилась возможность проникнуть сквозь слой и выбирать и нажимать на элементы страницы */
   /* visibility: hidden; */
   /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.5); /* тут если убрать translate(-50%, -50%) получится тоже интересный эффект - с правого нижнего угла модалка поднимается и расширяется на центр */
+  transform: translate(-50%, -50%) scale(0.5);
+  /* тут если убрать translate(-50%, -50%) получится тоже интересный эффект - с правого нижнего угла модалка поднимается и расширяется на центр */
 }
 
 .modal {
@@ -327,6 +346,10 @@ main {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
+
+.js-form {
+  position: relative;
+}
 .button-modal {
   /* стили для кнопки (крестик в кружочке) закрытия модального окна */
   position: absolute;
@@ -337,24 +360,25 @@ main {
   border-radius: 50%;
   padding: 6px;
   cursor: pointer;
-  outline-color: var(
-    --active-color
-  ); /* для того, чтоб при нажатии на кнопку не появлялась черная рамка */
+  outline-color: var(--active-color);
+  /* для того, чтоб при нажатии на кнопку не появлялась черная рамка */
 }
-.modal .icon {
+
+.modal-icon {
   /* иконка крестика для закрытия модального окна */
   width: 18px;
   height: 18px;
   fill: var(--logo-studio-color);
 }
-.button-modal :hover .icon,
-.button-modal :focus .icon {
+
+.button-modal:hover .modal-icon,
+.button-modal :focus > .modal-icon {
   fill: var(--active-color);
 }
 
 /* -----------------------FORM----------------------------- */
 
-.title-form {
+.form-title {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -362,35 +386,43 @@ main {
   margin: 0;
   margin-bottom: 12px;
 }
+
 .input-container {
   flex-direction: column;
   color: var(--inside-color);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-input {
+.modalform-input {
+  padding: 0;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
-  height: 40px;
-  padding-left: 42px;
-
+  /* height: 40px; */
   width: 100%;
-
   cursor: pointer;
+
+  color: var(--minititles-color);
+  line-height: 2.75;
 }
-/* input:not(:last-child) {
-  margin-bottom: 10px;
-} */
-label {
+.input-icon-container > .modalform-input {
+  padding-left: 42px;
+}
+
+.label-titles {
   margin-bottom: 4px;
 }
-.input-container {
+
+.input-icon-container {
   position: relative;
   margin-bottom: 10px;
 }
-.input-container .icon {
+
+.input-icon-container .icon {
   position: absolute;
+  left: 0;
+  /* transform: translate(50%, 50%); */
+
   transform: translate(12px, 11px);
   fill: var(--minititles-color);
   width: 18px;
@@ -398,29 +430,29 @@ label {
   cursor: pointer;
 }
 
-input :hover .icon {
-  /* .input-container .icon:focus input { */
+.modalform-input:focus,
+.modalform-input:focus + .icon {
+  outline-color: var(--active-color);
   fill: var(--active-color);
 }
+/* -------------------------- */
+/* -------------------------- */
+/* -------------------------- */
+.modalform-comment {
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 
-input:focus,
-input:hover {
-  outline-color: var(--active-color);
-}
-/* input:focus .icon {
-  fill: red;
-} */
-.modal input:hover .icon {
-  fill: red;
-}
+  width: 100%;
+  cursor: pointer;
 
-comment::placeholder {
-  font-size: 12px;
-  line-height: 14px;
+  margin-bottom: 20px;
+}
+.modalform-comment::placeholder {
+  line-height: 1.14;
   letter-spacing: 0.01em;
 
-  color: red;
-  /* color: rgba(117, 117, 117, 0.5); */
+  color: rgba(117, 117, 117, 0.5);
 }
 
 textarea {
@@ -428,10 +460,63 @@ textarea {
   resize: none;
 }
 
-/* checkbox {
-  color: red;
-} */
+.modalform-comment:focus {
+  outline-color: var(--active-color);
+}
+/* -------------------------- */
+/* -------------------------- */
+/* -------------------------- */
 
+.checkbox-container {
+  padding-left: 13px;
+  align-items: center;
+  fill: red;
+}
+.checkbox-title {
+  line-height: 1.71;
+}
+.checkbox-container .link {
+  color: var(--active-color);
+  text-decoration: underline;
+  outline-color: var(--active-color);
+}
+
+/* =========== */
+
+.checkbox-container:checked .checkbox::before {
+  content: "";
+  border-radius: 50%;
+  background-image: url(../images/icons/form-check-window.svg);
+}
+
+/* ------------------------ */
+/* ------------------------ */
+/* ------------------------ */
+.modal-submit {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  /* identical to box height, or 187% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
+
+  background-color: var(--active-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  padding: 10px 55px;
+  margin: 0px auto;
+  outline: none;
+  border: none;
+  outline: var(--active-color);
+
+  cursor: pointer;
+}
 /* ======================================================== */
 /* ======================FEATURES========================== */
 /* ======================================================== */
@@ -927,6 +1012,7 @@ textarea {
   line-height: 1.14;
   text-transform: uppercase;
 }
+
 .form-cont .text {
   margin-bottom: 20px;
 }
@@ -934,6 +1020,7 @@ textarea {
 fototer-form::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
 footer input {
   background-color: transparent;
   height: 50px;
@@ -949,6 +1036,7 @@ footer input {
 
   color: var(--title-color);
 }
+
 /* footer-form {
   position: relative;
 } */
@@ -982,6 +1070,7 @@ footer input {
   height: 24px;
   margin-left: 10px;
 }
+
 /* ======================================================== */
 /* =================PORTFOLIO-PAGE========================= */
 /* ======================================================== */
