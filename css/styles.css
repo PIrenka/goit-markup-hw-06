@@ -233,13 +233,10 @@ main {
   /* outline: 5px solid yellow; */
   max-width: 1600px;
   height: 600px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0px auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 200px 252px; */
-  background-size: contain;
   background-image: linear-gradient(
       var(--hero-overlay-color),
       var(--hero-overlay-color)
@@ -247,6 +244,7 @@ main {
     url("../images/hero-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: auto;
 }
 
 .hero .title {
@@ -275,7 +273,7 @@ main {
 
   padding: 10px 32px;
   border: none;
-  outline: none;
+  outline-color: var(--active-color);
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
   border-radius: 4px;
   cursor: pointer;
@@ -339,7 +337,9 @@ main {
   border-radius: 50%;
   padding: 6px;
   cursor: pointer;
-  outline: none; /* для того, чтоб при нажатии на кнопку не появлялась черная рамка */
+  outline-color: var(
+    --active-color
+  ); /* для того, чтоб при нажатии на кнопку не появлялась черная рамка */
 }
 .modal .icon {
   /* иконка крестика для закрытия модального окна */
@@ -347,6 +347,90 @@ main {
   height: 18px;
   fill: var(--logo-studio-color);
 }
+.button-modal :hover .icon,
+.button-modal :focus .icon {
+  fill: var(--active-color);
+}
+
+/* -----------------------FORM----------------------------- */
+
+.title-form {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 12px;
+}
+.input-container {
+  flex-direction: column;
+  color: var(--inside-color);
+  margin-bottom: 20px;
+}
+
+input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  height: 40px;
+  padding-left: 42px;
+
+  width: 100%;
+
+  cursor: pointer;
+}
+/* input:not(:last-child) {
+  margin-bottom: 10px;
+} */
+label {
+  margin-bottom: 4px;
+}
+.input-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+.input-container .icon {
+  position: absolute;
+  transform: translate(12px, 11px);
+  fill: var(--minititles-color);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+input :hover .icon {
+  /* .input-container .icon:focus input { */
+  fill: var(--active-color);
+}
+
+input:focus,
+input:hover {
+  outline-color: var(--active-color);
+}
+/* input:focus .icon {
+  fill: red;
+} */
+.modal input:hover .icon {
+  fill: red;
+}
+
+comment::placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+
+  color: red;
+  /* color: rgba(117, 117, 117, 0.5); */
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}
+
+/* checkbox {
+  color: red;
+} */
 
 /* ======================================================== */
 /* ======================FEATURES========================== */
@@ -367,6 +451,7 @@ main {
   padding: 0;
   margin-bottom: 10px;
 }
+
 .features .list .text {
   /* стили для парграфов h3 ОСОБЕННОСТЕЙ */
   color: var(--inside-color);
@@ -374,6 +459,7 @@ main {
   line-height: 1.71;
   padding: 0;
 }
+
 /* .features .list {
   flex-wrap: nowrap;
 } */
@@ -381,6 +467,7 @@ main {
   /* ширина столбиков с текстом в Особенностях */
   flex-basis: calc((100% - 3 * 30px) / 4);
 }
+
 .features .list .item:not(:last-child) {
   /* отступы между столбиками с текстом в Особенностях */
   margin-right: 30px;
@@ -400,6 +487,7 @@ main {
   border-radius: 4px;
   margin-bottom: 30px;
 }
+
 .feature-2 .title::before {
   content: "";
   display: block;
@@ -412,6 +500,7 @@ main {
   border-radius: 4px;
   margin-bottom: 30px;
 }
+
 .feature-3 .title::before {
   content: "";
   display: block;
@@ -424,6 +513,7 @@ main {
   border-radius: 4px;
   margin-bottom: 30px;
 }
+
 .feature-4 .title::before {
   content: "";
   display: block;
@@ -445,6 +535,7 @@ main {
   /* внутренние отступы для контейнера Чем Мы Занимаемся  */
   padding-bottom: 94px;
 }
+
 .whatwedo .title {
   font-weight: 700;
   font-size: 36px;
@@ -452,11 +543,14 @@ main {
   text-align: center;
   margin-bottom: 50px;
 }
+
 .whatwedo .item {
   /* отведенная ширина под фото из раздела */
   flex-basis: calc ((100% - 2 * 30px) / 3);
-  position: relative; /*можно ли применять к ли?*/
+  position: relative;
+  /*можно ли применять к ли?*/
 }
+
 .whatwedo .item:not(:last-child) {
   margin-right: 30px;
 }
@@ -486,6 +580,7 @@ main {
   /* стили для Наша Команда */
   background: var(--team-container-background);
 }
+
 .our-team .container {
   /* внутренние отступы для контейнера Наша Команда */
   padding-top: 94px;
@@ -508,10 +603,12 @@ main {
   align-items: center;
   padding-bottom: 94px;
 }
+
 .list.team .item:not(:last-child) {
   /* разделение пространства между карточками */
   margin-right: 30px;
 }
+
 .list.team .item {
   /* фон карточек команды и cтили для бордера карточки*/
   background-color: var(--title-color);
@@ -531,6 +628,7 @@ main {
   text-align: center;
   margin-bottom: 10px;
 }
+
 .list.team .item .text {
   /* стили к параграфам списка Нашей Команды  */
   color: var(--inside-color);
@@ -551,12 +649,14 @@ main {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  box-shadow: none; /* скрыть тени от круглых иконок */
+  box-shadow: none;
+  /* скрыть тени от круглых иконок */
   background-color: var(--title-color);
   padding: 12px;
   /* стиль возможности сделать переходы (А-В-А) при ховере и фокусе (время-250ms, функция распределения времени-cubic-bezier(0.4, 0, 0.2, 1) */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .social .item-social:not(:last-child) {
   /* отступы между кружочками с иконками соц сетей */
   margin-right: 10px;
@@ -586,6 +686,7 @@ main {
   /* цвет иконок соц сетей при ховере */
   fill: var(--title-color);
 }
+
 .list.social .item-social .link:hover,
 .list.social .item-social .link:focus {
   /* цвет подложки-кружочка соц сетей при ховере */
@@ -624,6 +725,7 @@ main {
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .our-clients .item:not(:last-child) {
   /* отступы между блоками логотипов компаний */
   margin-right: 30px;
@@ -641,31 +743,37 @@ main {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* размеры можно задать для каждого, класса. но прописывать в каждой иконке свою ширину и высоту в спрайте НЕ СТОИТ (тогда не убераеться зарезервированое место под иконку - 300*150 !! */
 }
+
 .icon.client-1 {
   /* размеры и расположение логотипа компании-1 */
   width: 44.27px;
   height: 49.23px;
 }
+
 .icon.client-2 {
   /* размеры и расположение логотипа компании-2 */
   width: 40px;
   height: 52px;
 }
+
 .icon.client-3 {
   /* размеры и расположение логотипа компании-3 */
   width: 41px;
   height: 42.6px;
 }
+
 .icon.client-4 {
   /* размеры и расположение логотипа компании-4 */
   width: 79.66px;
   height: 42.02px;
 }
+
 .icon.client-5 {
   /* размеры и расположение логотипа компании-5 */
   width: 59px;
   height: 47px;
 }
+
 .icon.client-6 {
   /* размеры и расположение логотипа компании-6 */
   width: 88.48px;
@@ -711,6 +819,7 @@ main {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
 .footer .list:not(:last-child) {
   margin-right: 85px;
 }
@@ -723,6 +832,7 @@ main {
   padding-bottom: 60px;
   margin-right: 82px;
 }
+
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 
@@ -731,6 +841,7 @@ main {
   margin-bottom: 20px;
   /* outline: 6px solid yellow; */
 }
+
 .page-footer .studio-logotext {
   /* стили для части Studio в логотипе в Футере сайта */
   color: var(--title-color);
@@ -742,6 +853,7 @@ main {
   color: var(--title-color);
   display: block;
 }
+
 .mailtel-in-footer {
   /* стили для номера телефона в футере */
   color: var(--tel-in-footer-color);
@@ -755,6 +867,7 @@ main {
   padding-top: 72px;
   padding-bottom: 100px;
 }
+
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 .join-to-us .text {
@@ -772,12 +885,14 @@ main {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  box-shadow: none; /* скрыть тени от круглых иконок */
+  box-shadow: none;
+  /* скрыть тени от круглых иконок */
   background-color: var(--footer-eclipse-social-icons-color);
   padding: 12px;
   /* стиль возможности сделать переходы (А-В-А) при ховере и фокусе (время-250ms, функция распределения времени-cubic-bezier(0.4, 0, 0.2, 1) */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .footer-social .item-social:not(:last-child) {
   /* отступы между кружечками сойсетей */
   margin-right: 10px;
@@ -792,12 +907,81 @@ main {
   height: 20px;
   fill: var(--title-color);
 }
+
 .list.footer-social .item-social .link:hover,
 .list.footer-social .item-social .link:focus {
   /* смена заливки кружочка при ховере */
   background-color: var(--active-color);
 }
 
+.join-to-us {
+  margin-right: 93px;
+}
+
+/* ---------------------------FORM------------------------- */
+
+.form-cont {
+  color: var(--title-color);
+  font-weight: 700;
+  /* font-size: 14px; */
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+.form-cont .text {
+  margin-bottom: 20px;
+}
+
+fototer-form::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+footer input {
+  background-color: transparent;
+  height: 50px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  margin-right: 12px;
+
+  padding: 15px 16px;
+
+  width: 358px;
+
+  color: var(--title-color);
+}
+/* footer-form {
+  position: relative;
+} */
+.button-footer-submit {
+  /* position: absolute;
+
+  transform: translatey(-100%); */
+
+  background: var(--active-color);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 28px;
+  cursor: pointer;
+  outline-color: var(--active-color);
+
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.button-footer-submit .icon {
+  fill: var(--title-color);
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
 /* ======================================================== */
 /* =================PORTFOLIO-PAGE========================= */
 /* ======================================================== */
@@ -830,6 +1014,7 @@ main {
   /* стиль возможности сделать переходы (А-В-А) при ховере и фокусе (время-250ms, функция распределения времени-cubic-bezier(0.4, 0, 0.2, 1) */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .portfolio-button:hover,
 .portfolio-button:focus,
 .portfolio-button:active {
@@ -840,7 +1025,7 @@ main {
   border-radius: 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  outline: none;
+  outline-color: var(--active-color);
 }
 
 .page-portfolio .list.button {
@@ -854,6 +1039,7 @@ main {
   /* отступы справа для кнопок в верхнем ряду страници Портфолио */
   margin-right: 8px;
 }
+
 .page-portfolio .list.button .item {
   /* бордер для кнопок в верхнем ряду страници Портфолио */
   border-color: solid var(--team-container-background);
@@ -871,12 +1057,14 @@ main {
   letter-spacing: 0.06em;
   margin-bottom: 4px;
 }
+
 .page-portfolio .projects .text {
   /* стили для параграфов в карточках Проекто */
   font-size: 16px;
   line-height: 1.87;
   color: var(--inside-color);
 }
+
 .under-the-pic {
   /* отступы для контейнера текста под картинкой в карточке Проекты */
   padding: 20px 24px;
@@ -889,6 +1077,7 @@ main {
   /* flex-wrap: wrap; - это перенесла в начало в класс .flexbox*/
   padding-bottom: 94px;
 }
+
 .page-portfolio .projects .item {
   /* размер ширины под одну карточку */
   flex-basis: calc((100% - 30px * 2) / 3);
@@ -900,10 +1089,12 @@ main {
   /* стиль возможности сделать переходы (А-В-А) при ховере и фокусе (время-250ms, функция распределения времени-cubic-bezier(0.4, 0, 0.2, 1) */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .page-portfolio .projects .item:nth-child(3n) {
   /* убирает отступы справа у каждой третей карточки */
   margin-right: 0;
 }
+
 .page-portfolio .projects .item:nth-last-of-type(-n + 3) {
   /* убирает отступы снизу у трёх последних карточек */
   margin-bottom: 0;
@@ -921,6 +1112,7 @@ main {
   position: relative;
   overflow: hidden;
 }
+
 .projects .text.overlay {
   /* стили для оверлея (поверх картинок в Проектах)*/
   position: absolute;
@@ -938,6 +1130,7 @@ main {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* transition: transform 250ms ease; */
 }
+
 .page-portfolio .projects .item:hover .overlay,
 .page-portfolio .projects .item:focus .overlay {
   /* стили для анимации оверлея Проектов при ховере */
