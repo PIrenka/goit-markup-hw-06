@@ -251,10 +251,8 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(
-      var(--hero-overlay-color),
-      var(--hero-overlay-color)
-    ),
+  background-image: linear-gradient(var(--hero-overlay-color),
+      var(--hero-overlay-color)),
     url("../images/hero-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -350,6 +348,7 @@ main {
 .js-form {
   position: relative;
 }
+
 .button-modal {
   /* стили для кнопки (крестик в кружочке) закрытия модального окна */
   position: absolute;
@@ -369,10 +368,12 @@ main {
   width: 18px;
   height: 18px;
   fill: var(--logo-studio-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .button-modal:hover .modal-icon,
-.button-modal :focus > .modal-icon {
+.button-modal :focus>.modal-icon {
   fill: var(--active-color);
 }
 
@@ -404,8 +405,14 @@ main {
 
   color: var(--minititles-color);
   line-height: 2.75;
+
+  outline-color: transparent;
+
+  transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
-.input-icon-container > .modalform-input {
+
+.input-icon-container>.modalform-input {
   padding-left: 42px;
 }
 
@@ -428,16 +435,19 @@ main {
   width: 18px;
   height: 18px;
   cursor: pointer;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .modalform-input:focus,
-.modalform-input:focus + .icon {
+.modalform-input:focus+.icon {
+  /* outline: none; */
+
   outline-color: var(--active-color);
   fill: var(--active-color);
 }
-/* -------------------------- */
-/* -------------------------- */
-/* -------------------------- */
+
 .modalform-comment {
   padding: 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -447,7 +457,14 @@ main {
   cursor: pointer;
 
   margin-bottom: 20px;
+
+  width: 100%;
+  resize: none;
+  outline-color: transparent;
+  transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
+
 .modalform-comment::placeholder {
   line-height: 1.14;
   letter-spacing: 0.01em;
@@ -455,14 +472,10 @@ main {
   color: rgba(117, 117, 117, 0.5);
 }
 
-textarea {
-  width: 100%;
-  resize: none;
-}
-
 .modalform-comment:focus {
   outline-color: var(--active-color);
 }
+
 /* -------------------------- */
 /* -------------------------- */
 /* -------------------------- */
@@ -472,16 +485,17 @@ textarea {
   align-items: center;
   fill: red;
 }
+
 .checkbox-title {
   line-height: 1.71;
 }
+
 .checkbox-container .link {
   color: var(--active-color);
   text-decoration: underline;
   outline-color: var(--active-color);
 }
 
-/* =========== */
 
 .checkbox-container:checked .checkbox::before {
   content: "";
@@ -489,34 +503,30 @@ textarea {
   background-image: url(../images/icons/form-check-window.svg);
 }
 
-/* ------------------------ */
-/* ------------------------ */
-/* ------------------------ */
+/* =========== */
+
 .modal-submit {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
-  line-height: 30px;
-  /* identical to box height, or 187% */
+  line-height: 1.87;
 
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
-
   color: #ffffff;
 
   background-color: var(--active-color);
+  border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-
   padding: 10px 55px;
   margin: 0px auto;
-  outline: none;
-  border: none;
-  outline: var(--active-color);
-
   cursor: pointer;
+
+  outline-color: var(--active-color);
 }
+
 /* ======================================================== */
 /* ======================FEATURES========================== */
 /* ======================================================== */
