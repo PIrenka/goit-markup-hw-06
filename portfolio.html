@@ -191,59 +191,80 @@
     <!-- Подвал -->
     <footer class="page-footer">
         <div class="container footer flexbox">
-            <div class="footer-contacts">
-                <ul class="list">
-                    <li class="item">
-                        <a href="./index.html" lang="en" class="link logo"> <span class="web-logotext">Web</span><span
-                                class="studio-logotext">Studio</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <address>
-                            <span class="address">г. Киев, пр-т Леси Украинки, 26</span>
-                        </address>
-                    </li>
-                    <li class="item"> <a href="mailto:info@example.com"
-                            class="link mailtel-in-footer">info@example.com</a>
-                    </li>
-                    <li class="item"> <a href="tel:+380991111111" class="link mailtel-in-footer">+38 099 111 11 11</a>
-                    </li>
-                </ul>
-            </div>
+            <!-- <div class="footer-contacts"> -->
+            <ul class="list">
+                <li class="item">
+                    <a href="./index.html" lang="en" class="link logo"> <span class="web-logotext">Web</span><span
+                            class="studio-logotext">Studio</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <address>
+                        <span class="address">г. Киев, пр-т Леси Украинки, 26</span>
+                    </address>
+                </li>
+                <li class="item"> <a href="mailto:info@example.com" class="link mailtel-in-footer">info@example.com</a>
+                </li>
+                <li class="item"> <a href="tel:+380991111111" class="link mailtel-in-footer">+38 099 111 11 11</a>
+                </li>
+            </ul>
+            <!-- </div> -->
 
-            <div class="footer-social-contacts">
-                <ul class="list join-to-us">
-                    <li class="item">
-                        <p class="text">присоединяйтесь</p>
-                    </li>
-                    <li class="item">
-                        <ul class="list footer-social flexbox">
-                            <li class="item-social"> <a href="https://www.instagram.com/" target="_blank"
-                                    class="link flexbox">
-                                    <svg class="icon instagram">
-                                        <use href="./images/icons/sprite.svg#instagram"></use>
-                                    </svg></a> </li>
-                            <li class="item-social"> <a href="https://www.twitter.com/" target="_blank"
-                                    class="link flexbox">
-                                    <svg class="icon twitter">
-                                        <use href="./images/icons/sprite.svg#twitter"> </use>
-                                    </svg></a></li>
-                            <li class="item-social"> <a href="https://www.facebook.com/" target="_blank"
-                                    class="link flexbox">
-                                    <svg class="icon facebook">
-                                        <use href="./images/icons/sprite.svg#facebook"> </use>
-                                    </svg></a></li>
-                            <li class="item-social"> <a href="https://www.linkedin.com/" target="_blank"
-                                    class="link flexbox">
-                                    <svg class="icon linkedin">
-                                        <use href="./images/icons/sprite.svg#linkedin"> </use>
-                                    </svg></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <!-- <div class="footer-social-contacts"> -->
+            <ul class="list join-to-us">
+                <li class="item">
+                    <p class="text">присоединяйтесь</p>
+                </li>
+                <li class="item">
+                    <ul class="list footer-social flexbox">
+                        <li class="item-social"> <a href="https://www.instagram.com/" target="_blank"
+                                class="link flexbox">
+                                <svg class="icon instagram">
+                                    <use href="./images/icons/sprite.svg#instagram"></use>
+                                </svg></a> </li>
+                        <li class="item-social"> <a href="https://www.twitter.com/" target="_blank"
+                                class="link flexbox">
+                                <svg class="icon twitter">
+                                    <use href="./images/icons/sprite.svg#twitter"> </use>
+                                </svg></a></li>
+                        <li class="item-social"> <a href="https://www.facebook.com/" target="_blank"
+                                class="link flexbox">
+                                <svg class="icon facebook">
+                                    <use href="./images/icons/sprite.svg#facebook"> </use>
+                                </svg></a></li>
+                        <li class="item-social"> <a href="https://www.linkedin.com/" target="_blank"
+                                class="link flexbox">
+                                <svg class="icon linkedin">
+                                    <use href="./images/icons/sprite.svg#linkedin"> </use>
+                                </svg></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- </div> -->
+
+            <ul class="list form-container">
+                <li class="item">
+                    <p class="text">Подпишитесь на рассылку</p>
+                </li>
+                <li class="item flexbox">
+                    <form class="js-form flexbox" id="footer-form" class="footer-form">
+                        <label for="mail-submit"></label>
+                        <input class="footer-form-field" type="email" id="mail-submit" placeholder="E-mail">
+                        <button type="submit" class="button-footer-submit">Подписаться
+                            <!-- <svg class="icon">
+                                <use href="./images/icons/sprite.svg#footer-icon-send"> </use>
+                            </svg> -->
+
+                        </button>
+                    </form>
+                </li>
+
+            </ul>
         </div>
     </footer>
+
+    <script src="./js/js-form.js"></script>
+
 </body>
 
 </html>

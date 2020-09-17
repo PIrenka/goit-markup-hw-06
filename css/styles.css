@@ -945,16 +945,14 @@ textarea {
   margin-top: 9px;
 }
 
-/* ----------------------------------------------------- */
-/* ----------------------------------------------------- */
+/* --------------------------SOCIAL TO JOIN US-------------- */
+
 .footer-social-contacts {
   /* отступы для второго столбика контактов в футере */
   padding-top: 72px;
   padding-bottom: 100px;
 }
 
-/* ----------------------------------------------------- */
-/* ----------------------------------------------------- */
 .join-to-us .text {
   /* стили для текста-контейнера */
   color: var(--title-color);
@@ -1005,23 +1003,26 @@ textarea {
 
 /* ---------------------------FORM------------------------- */
 
-.form-cont {
+.form-container {
   color: var(--title-color);
   font-weight: 700;
-  /* font-size: 14px; */
   line-height: 1.14;
   text-transform: uppercase;
 }
 
-.form-cont .text {
+.form-container .text {
   margin-bottom: 20px;
 }
 
-fototer-form::placeholder {
+.footer-form-field::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  /* align-items: center; */
+
   color: rgba(255, 255, 255, 0.6);
 }
 
-footer input {
+.footer-form-field {
   background-color: transparent;
   height: 50px;
 
@@ -1033,18 +1034,12 @@ footer input {
   padding: 15px 16px;
 
   width: 358px;
+  outline-color: var(--active-color);
 
   color: var(--title-color);
 }
 
-/* footer-form {
-  position: relative;
-} */
 .button-footer-submit {
-  /* position: absolute;
-
-  transform: translatey(-100%); */
-
   background: var(--active-color);
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -1064,10 +1059,19 @@ footer input {
   letter-spacing: 0.06em;
 }
 
-.button-footer-submit .icon {
+/* .button-footer-submit .icon {
   fill: var(--title-color);
   width: 24px;
   height: 24px;
+  margin-left: 10px;
+} */
+
+.button-footer-submit::after {
+  /* если не будет анимирована и менять цвет иконка, ее можно через псевдоелемент вставить */
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/icons/footer-icon-send.svg);
   margin-left: 10px;
 }
 
