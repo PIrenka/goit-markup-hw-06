@@ -75,7 +75,7 @@
 
                             <div class="input-container flexbox">
 
-                                <label for="name" class="label-titles">Имя</label>
+                                <label for="name" class="label-form-titles">Имя</label>
                                 <div class="input-icon-container">
                                     <input class="modalform-input" type="text" name="name" id="name" />
                                     <svg class="icon forms">
@@ -83,7 +83,7 @@
                                     </svg>
                                 </div>
 
-                                <label for="tel-number" class="label-titles">Телефон</label>
+                                <label for="tel-number" class="label-form-titles">Телефон</label>
                                 <div class="input-icon-container">
                                     <input class="modalform-input" type="tel" name="tel-number" id="tel-number" />
                                     <svg class="icon">
@@ -91,7 +91,7 @@
                                     </svg>
                                 </div>
 
-                                <label for="mail" class="label-titles">Почта</label>
+                                <label for="mail" class="label-form-titles">Почта</label>
                                 <div class="input-icon-container">
                                     <input class="modalform-input" type="email" name="mail" id="mail" />
                                     <svg class="icon">
@@ -99,19 +99,17 @@
                                     </svg>
                                 </div>
 
-                                <label for="comment" class="label-titles">Комментарий</label>
+                                <label for="comment" class="label-form-titles">Комментарий</label>
                                 <textarea class="modalform-comment" name="comment" id="comment" rows="7"
                                     placeholder="Введите текст"></textarea>
 
+                                <label for="checkbox" class="label-checkbox"><input type="checkbox"
+                                        class="checkbox visually-hidden" id="checkbox" />
+                                    <span class="label-checkbox-title">Соглашаюсь с рассылкой и
+                                        принимаю</span> <a href="/" class="link"> Условия
+                                        договора</a>
 
-
-                                <div class="checkbox-container">
-                                    <input type="checkbox" id="cheсkbox" class="checkbox hidden-title" />
-                                    <label for="checkbox" class="checkbox-title ">Соглашаюсь с рассылкой и принимаю <a
-                                            href="" class="link">Условия
-                                            договора</a></label>
-
-                                </div>
+                                </label>
 
                             </div>
 
@@ -425,7 +423,7 @@
                     <p class="text">Подпишитесь на рассылку</p>
                 </li>
                 <li class="item flexbox">
-                    <form class="js-form flexbox" id="footer-form" class="footer-form">
+                    <form class="js-form flexbox" id="footer-form">
                         <label for="mail-submit"></label>
                         <input class="footer-form-field" type="email" id="mail-submit" placeholder="E-mail">
                         <button type="submit" class="button-footer-submit">Подписаться

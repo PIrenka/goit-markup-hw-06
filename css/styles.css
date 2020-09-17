@@ -251,8 +251,10 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(var(--hero-overlay-color),
-      var(--hero-overlay-color)),
+  background-image: linear-gradient(
+      var(--hero-overlay-color),
+      var(--hero-overlay-color)
+    ),
     url("../images/hero-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -369,11 +371,10 @@ main {
   height: 18px;
   fill: var(--logo-studio-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .button-modal:hover .modal-icon,
-.button-modal :focus>.modal-icon {
+.button-modal :focus > .modal-icon {
   fill: var(--active-color);
 }
 
@@ -409,14 +410,13 @@ main {
   outline-color: transparent;
 
   transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
-.input-icon-container>.modalform-input {
+.input-icon-container > .modalform-input {
   padding-left: 42px;
 }
 
-.label-titles {
+.label-form-titles {
   margin-bottom: 4px;
 }
 
@@ -437,11 +437,10 @@ main {
   cursor: pointer;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .modalform-input:focus,
-.modalform-input:focus+.icon {
+.modalform-input:focus + .icon {
   /* outline: none; */
 
   outline-color: var(--active-color);
@@ -462,7 +461,6 @@ main {
   resize: none;
   outline-color: transparent;
   transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .modalform-comment::placeholder {
@@ -480,30 +478,53 @@ main {
 /* -------------------------- */
 /* -------------------------- */
 
-.checkbox-container {
-  padding-left: 13px;
-  align-items: center;
-  fill: red;
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 
-.checkbox-title {
+.label-checkbox {
+  padding-left: 13px;
   line-height: 1.71;
 }
 
-.checkbox-container .link {
+.label-checkbox .link {
   color: var(--active-color);
   text-decoration: underline;
   outline-color: var(--active-color);
+  margin-left: 4px;
 }
 
-
-.checkbox-container:checked .checkbox::before {
+.label-checkbox-title::before {
   content: "";
-  border-radius: 50%;
-  background-image: url(../images/icons/form-check-window.svg);
+  display: inline-block;
+  vertical-align: -11%;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--minititles-color);
+  border-radius: 2px;
+  /* background-image: url(../images/icons/form-check-window.svg); */
+  margin-right: 8px;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* outline-color: var(--active-color); */
 }
 
-/* =========== */
+.checkbox:checked ~ .label-checkbox-title::before {
+  border: 2px solid var(--active-color);
+  border-radius: 2px;
+  background-color: var(--active-color);
+  background-image: url(../images/icons/vector-check.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 .modal-submit {
   font-weight: 700;
@@ -1151,7 +1172,13 @@ main {
 }
 
 /* =================PORTFOLIO-PAGE-проекты================ */
-
+.link-projects {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  /* стиль возможности сделать переходы (А-В-А) при ховере и фокусе (время-250ms, функция распределения времени-cubic-bezier(0.4, 0, 0.2, 1) */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .page-portfolio .projects .title {
   /* стили для заголовков в карточках Проектов */
   font-weight: 700;
